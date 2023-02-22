@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .info {
+    @apply p-4 drop-shadow-md bg-gradient-to-br from-[#363636] via-[#2e2e2e] to-[#252525] rounded-lg max-w-[18rem];
+  }
+
+  .lightOrange {
+    @apply text-[#FBC492];
+  }
+
+  .textColor {
+    @apply text-[#EAEAEA];
+  }
+
+  .backGround {
+    @apply bg-gradient-to-r from-[#1B1B1B] via-[#121212] to-[#0A0A0A];
+  }
+
+  .newChat {
+    @apply flex border-2 border-[#FBC492] py-3 px-6 rounded-full cursor-pointer mb-3 hover:opacity-50 items-center;
+  }
+
+  .chatRow {
+    @apply flex border-transparent py-3 px-6 rounded-xl cursor-pointer mt-3 justify-between items-center max-w-md overflow-hidden;
+  }
+  .sideBar {
+    @apply bg-gradient-to-br from-[#363636] via-[#2e2e2e] to-[#252525];
+  }
+
+  * {
+    font-family: "Poppins", sans-serif;
+  }
+}
