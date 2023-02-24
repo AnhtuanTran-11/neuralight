@@ -1,5 +1,6 @@
 import ChatBox from "../../../components/ChatBox";
 import ChatInput from "../../../components/ChatInput";
+import HeightContainer from "../../../components/HeightContainer";
 
 type Props = {
   params: {
@@ -8,9 +9,11 @@ type Props = {
 };
 function ChatPage({ params: { id } }: Props) {
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
-      <ChatBox chatID={id} />
-      <ChatInput chatID={id} />
+    <div className="flex flex-col overflow-hidden">
+      <HeightContainer>
+        <ChatBox chatID={id} />
+        <ChatInput chatID={id} />
+      </HeightContainer>
     </div>
   );
 }
