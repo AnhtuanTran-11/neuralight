@@ -11,14 +11,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getServerSession(GoogleAuthOptions);
-  let vh = window.innerHeight * 0.01;
-
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-  window.addEventListener("resize", () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  });
   return (
     <html>
       <head>
@@ -33,7 +25,7 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body style={{ height: `calc(var(${--vh}, 1vh) * 100)` }}>
+      <body>
         <SessionProvider session={session}>
           {!session ? (
             <Login />

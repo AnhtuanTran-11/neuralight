@@ -2,7 +2,6 @@ import React from "react";
 import { BsSun } from "react-icons/bs";
 import { RxLightningBolt } from "react-icons/rx";
 import { VscWarning } from "react-icons/vsc";
-import ChatInput from "../components/ChatInput";
 
 type Props = {
   chatID: string;
