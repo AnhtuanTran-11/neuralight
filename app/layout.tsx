@@ -3,6 +3,7 @@ import { SessionProvider } from "../components/SessionProvider";
 import { GoogleAuthOptions } from "../pages/api/auth/[...nextauth]";
 import SideBar from "../components/SideBar";
 import Login from "../components/Login";
+import HeightContainer from "../components/HeightContainer";
 import "../styles/globals.css";
 
 export default async function RootLayout({
@@ -27,16 +28,18 @@ export default async function RootLayout({
       </head>
       <body>
         <SessionProvider session={session}>
-          {!session ? (
-            <Login />
-          ) : (
-            <div className="flex">
-              <div>
-                <SideBar />
+          <HeightContainer>
+            {!session ? (
+              <Login />
+            ) : (
+              <div className="flex">
+                <div>
+                  <SideBar />
+                </div>
+                <div className="flex-1 backGround">{children}</div>
               </div>
-              <div className="flex-1 backGround">{children}</div>
-            </div>
-          )}
+            )}
+          </HeightContainer>
         </SessionProvider>
       </body>
     </html>
